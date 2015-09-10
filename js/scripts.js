@@ -60,3 +60,23 @@ var romanNumerals = function(number) {
 
   return formatted;
 };
+
+$(document).ready(function() {
+
+  $(document).foundation();
+  
+  $("form#romanNumerals").submit(function(event) {
+    var number = parseInt($("input#number").val());
+
+    if (number >= 4000) {
+      alert('Too large of a number!');
+    }
+    var result = romanNumerals(number);
+
+
+  $(".result").text(result);
+
+    $("#result").show();
+    event.preventDefault();
+  });
+});
